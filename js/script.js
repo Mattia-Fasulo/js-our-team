@@ -19,3 +19,43 @@ Aggiungere attraverso un form un membro al team
 
 */
 
+// i create the uorTeam array
+const ourTeam = [
+    {
+        "nome" : "Wayne",
+        "surname" : "Barnet",
+        "role" : "Chief EditorFounder & Ceo",
+        "image" : "wayne-barnett-founder-ceo.jpg"
+    },
+    {
+        "nome" : "Angela",
+        "surname" : "Caroll",
+        "role" : "Chief Editor",
+        "image" : "angela-caroll-chief-editor.jpg"
+    }, 
+    {
+        "nome" : "Walter",
+        "surname" : "Gordon",
+        "role" : "Office Manager",
+        "image" : "walter-gordon-office-manager.jpg"
+    },
+    {
+        "nome" : "Angela",
+        "surname" : "Lopez",
+        "role" : "Social Media Manager",
+        "image" : "angela-lopez-social-media-manager.jpg"
+    },
+    {
+        "nome" : "Scott",
+        "surname" : "Estrada",
+        "role" : "Developer",
+        "image" : "scott-estrada-developer.jpg"
+    },
+    {
+        "nome" : "Barbara",
+        "surname" : "Ramos",
+        "role" : "Graphic Designer",
+        "image" : "barbara-ramos-graphic-designer.jpg"
+    },
+]
+console.log(ourTeam);
