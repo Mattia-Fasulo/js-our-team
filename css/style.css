@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+/* general */
+:root {
+    --water-green : #4ad4b4;
+    --my-reddino : #b6334f;
+    --white : #fff;
+}
+
 body {
-    font-family: 'Source Code Pro', monospace;;
+    font-family: 'Source Code Pro', monospace;
+    background-color: var(--water-green);
+    color: var(white);
 }

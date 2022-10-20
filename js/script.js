@@ -2,22 +2,31 @@
 
 /*
 
-Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
+x-Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
 Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
-MILESTONE 0:
+
+x-MILESTONE 0:
 Creare l’array di oggetti con le informazioni fornite.
-MILESTONE 1:
+
+x-MILESTONE 1:
 Stampare su console le informazioni di nome, ruolo e la stringa della foto
-MILESTONE 2:
+
+-MILESTONE 2:
 Stampare le stesse informazioni su DOM sottoforma di stringhe
-BONUS 1:
+
+-BONUS 1:
 Trasformare la stringa foto in una immagine effettiva
-BONUS 2:
-Organizzare i singoli membri in card/schede e stilarli a vostro gusto :faccia_leggermente_sorridente:
-BONUS 3:
+
+-BONUS 2:
+Organizzare i singoli membri in card/schede e stilarli a vostro gusto 
+
+-BONUS 3:
 Aggiungere attraverso un form un membro al team
 
 */
+
+// i associate a constant with my div
+const myContainerHTML = document.getElementById('my-container');
 
 // i create the uorTeam array
 const ourTeam = [
@@ -58,4 +67,17 @@ const ourTeam = [
         "image" : "barbara-ramos-graphic-designer.jpg"
     },
 ]
-console.log(ourTeam);
+
+
+//i print the information of the members team in thwe console
+for(let value of ourTeam) {
+    for( let key in value) {
+        console.log(key+' : '+value[key]);
+        let text = document.createElement('h2');
+    }
+}
+
+
+
+
+
