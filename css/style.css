@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+/* #3b4779 : #ca890b */
+
 /* general */
 :root {
     --water-green : #4ad4b4;
@@ -14,6 +16,60 @@
 
 body {
     font-family: 'Source Code Pro', monospace;
-    background-color: var(--water-green);
-    color: var(white);
+    background-color: rgb(86, 85, 85);
+  
+    color: rgba(187, 92, 97, 1);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    
 }
+
+
+
+.wrapper {
+    margin: 20px auto;
+    max-width: 1400px;
+}
+
+.header {
+    color: rgba(106, 75, 80, 1);
+    background-color: rgba(106, 75, 80, 1);
+    border:2px solid rgba(106, 75, 80, 1);
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.474), inset 3px 3px 2px rgba(0, 0, 0, 0.6), inset -3px -3px 3px rgba(0, 0, 0, 0.501),  -3px -3px 3px rgba(0, 0, 0, 0.479);
+}
+
+.my-card { 
+    color: rgba(106, 75, 80, 1);
+    margin: 10px;
+    display: flex;
+    background-color: rgba(106, 75, 80, 1);
+    border:2px solid   rgba(106, 75, 80, 1);
+    border-radius: 10px;
+    width: calc((100% - 120px) / 2);
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.474), inset 3px 3px 2px rgba(0, 0, 0, 0.6), inset -3px -3px 3px rgba(0, 0, 0, 0.501),  -3px -3px 3px rgba(0, 0, 0, 0.479); 
+    
+}
+
+.my-card img {
+    display: flex;
+    /* border-radius: 50% ; */
+    border-radius: 10px;
+    border: 2px solid  rgba(106, 75, 80, 1);
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.474), inset 3px 3px 2px rgba(0, 0, 0, 0.6), inset -3px -3px 3px rgba(0, 0, 0, 0.501),  -3px -3px 3px rgba(0, 0, 0, 0.479);
+      -moz-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.474), inset 3px 3px 2px rgba(0, 0, 0, 0.6), inset -3px -3px 3px rgba(0, 0, 0, 0.501),  -3px -3px 3px rgba(0, 0, 0, 0.479);
+      -webkit-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.474), inset 3px 3px 2px rgba(0, 0, 0, 0.6), inset -3px -3px 3px rgba(0, 0, 0, 0.501),  -3px -3px 3px rgba(0, 0, 0, 0.479);
+      -khtml-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.474), inset 3px 3px 2px rgba(0, 0, 0, 0.6), inset -3px -3px 3px rgba(0, 0, 0, 0.501),  -3px -3px 3px rgba(0, 0, 0, 0.479);
+      filter: saturate(0.23);
+}
+
+#my-btn {
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    margin-top: 20px;
+    color:  rgba(106, 75, 80, 1);
+    border-radius: 20px;
+    width: 150px;
+    background-color:  rgba(106, 75, 80, 1);
+    border: solid 2px rgba(106, 75, 80, 1);
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.481), inset 3px 3px 2px rgba(0, 0, 0, 0.453), inset -3px -3px 3px rgba(0, 0, 0, 0.393),  -3px -3px 3px rgba(0, 0, 0, 0.344);
+}
+ 
