@@ -14,13 +14,13 @@ Stampare su console le informazioni di nome, ruolo e la stringa della foto
 x-MILESTONE 2:
 Stampare le stesse informazioni su DOM sottoforma di stringhe
 
--BONUS 1:
+xx-BONUS 1:
 Trasformare la stringa foto in una immagine effettiva
 
--BONUS 2:
+x-BONUS 2:
 Organizzare i singoli membri in card/schede e stilarli a vostro gusto 
 
--BONUS 3:
+x-BONUS 3:
 Aggiungere attraverso un form un membro al team
 
 
@@ -88,6 +88,8 @@ const ourTeam = [
 
 // i associate a constant with my div
 const myContainerHTML = document.getElementById('my-container');
+//i associate a costant with my button
+const btnJoinHTML = document.getElementById('join-btn');
 
 
 //i print the information of the members team in the console
@@ -120,6 +122,7 @@ const generatorCard = function (i) {
     return cards;
 }
 
+// function that creates the row
 const generatorRow = function() {
     const wrapper = document.createElement('div');
     wrapper.classList.add("row", "justify-content-center", "gx-3", "mt-2");
@@ -131,6 +134,52 @@ const generatorRow = function() {
 }
 
 generatorRow();
+
+//function that creates the div my-form
+const generetaForm = function() {
+    const myDivForm = document.createElement('div');
+    myDivForm.setAttribute("id","my-form");
+    myDivForm.innerHTML =`
+        <label for="nome">Insert your name</label>
+        <input type="text" name="nome" id="nome">
+        <label for="surname">Insert your surname</label>
+        <input type="text" name="surname" id="surname">
+        <label for="nome">Insert your role</label>
+        <input type="text" name="role" id="role">
+        <button id="send-btn" class="my-btn mt-4">Send</button>
+        `
+    myContainerHTML.appendChild(myDivForm);
+}
+
+// function that operate on the button send
+const eventSend = function (){
+
+    //i take the user data
+    const nomeUtente = document.getElementById('nome').value;
+    const nomeUtenteCap =  capitalizeFirstLetter(nomeUtente);
+    const surnameUtente = document.getElementById('surname').value;
+    const surnameUtenteCap =  capitalizeFirstLetter(surnameUtente);
+    const roleUtente = document.getElementById('role').value;
+    const roleUtenteCap =  capitalizeFirstLetter(roleUtente);
+
+    // i push a new object in the array with the user data
+    ourTeam.shift({id: (parseInt(ourTeam.length) + 1) ,nome: nomeUtenteCap, surname: surnameUtenteCap, role: roleUtenteCap})
+    
+    const myDivForm = document.getElementById('my-form');
+    myDivForm.classList.add("d-none");
+}
+
+//function that operate on the button join
+const eventJoin = function () {
+    generetaForm();
+    const btnSend = document.getElementById('send-btn');
+
+    //i associe an event on the button located in the div form that i just created
+    btnSend.addEventListener('click', eventSend)
+}
+
+// i add an event on join button
+btnJoinHTML.addEventListener('click', eventJoin)
 
 
 

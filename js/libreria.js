@@ -33,5 +33,9 @@ let parolaGirata = parola.split('').reverse().join('');
 console.log(parolaGirata);
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
 
 
