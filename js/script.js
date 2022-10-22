@@ -142,10 +142,13 @@ const generetaForm = function() {
     myDivForm.innerHTML =`
         <label for="nome">Insert your name</label>
         <input type="text" name="nome" id="nome">
+        <span id="nome-span"></span>
         <label for="surname">Insert your surname</label>
         <input type="text" name="surname" id="surname">
+        <span id="surname-span"></span>
         <label for="nome">Insert your role</label>
         <input type="text" name="role" id="role">
+        <span id="role-span"></span>
         <button id="send-btn" class="my-btn mt-4">Send</button>
         `
     myContainerHTML.appendChild(myDivForm);
@@ -155,18 +158,43 @@ const generetaForm = function() {
 const eventSend = function (){
 
     //i take the user data
-    const nomeUtente = document.getElementById('nome').value;
+    let nomeUtenteInput = document.getElementById('nome');
+    let nomeUtente = nomeUtenteInput.value;
     const nomeUtenteCap =  capitalizeFirstLetter(nomeUtente);
+    const spanNome =document.getElementById('nome-span');
+    //I warn the user if he has not entered the name
+    if(nomeUtente == ''){
+        spanNome.innerText ='Insert a name!';
+    } else {
+        spanNome.innerText ='';
+    }
+
     const surnameUtente = document.getElementById('surname').value;
     const surnameUtenteCap =  capitalizeFirstLetter(surnameUtente);
+    const spanSurname =document.getElementById('surname-span');
+    if(surnameUtente == ''){
+        spanSurname.innerText ='Insert a surname!';
+    } else {
+        spanSurname.innerText ='';
+    }
+
     const roleUtente = document.getElementById('role').value;
     const roleUtenteCap =  capitalizeFirstLetter(roleUtente);
+    const spanRole =document.getElementById('role-span');
+    if(roleUtente == ''){
+        spanRole.innerText ='Insert a role!';
+    } else {
+        spanRole.innerText ='';
+    }
 
-    // i push a new object in the array with the user data
+    //if the user has filled in all the inputs i push a new object in the array with the user data
+    if(!(nomeUtente == '') && !(surnameUtente == '') && !(role == '')){
     ourTeam.shift({id: (parseInt(ourTeam.length) + 1) ,nome: nomeUtenteCap, surname: surnameUtenteCap, role: roleUtenteCap})
     
+    //I make the div form disappear
     const myDivForm = document.getElementById('my-form');
     myDivForm.classList.add("d-none");
+    }
 }
 
 //function that operate on the button join
