@@ -86,6 +86,7 @@ const ourTeam = [
     }
 ]
 
+const contForm = document.getElementById('cont-form');
 // i associate a constant with my div
 const myContainerHTML = document.getElementById('my-container');
 //i associate a costant with my button
@@ -151,7 +152,7 @@ const generetaForm = function() {
         <span id="role-span"></span>
         <button id="send-btn" class="my-btn mt-4">Send</button>
         `
-    myContainerHTML.appendChild(myDivForm);
+    contForm.appendChild(myDivForm);
 }
 
 // function that operate on the button send
@@ -189,7 +190,8 @@ const eventSend = function (){
 
     //if the user has filled in all the inputs i push a new object in the array with the user data
     if(!(nomeUtente == '') && !(surnameUtente == '') && !(role == '')){
-    ourTeam.shift({id: (parseInt(ourTeam.length) + 1) ,nome: nomeUtenteCap, surname: surnameUtenteCap, role: roleUtenteCap})
+    ourTeam.unshift({id: (parseInt(ourTeam.length) + 1) ,nome: nomeUtenteCap, surname: surnameUtenteCap, role: roleUtenteCap})
+    console.log(ourTeam);
     
     //I make the div form disappear
     const myDivForm = document.getElementById('my-form');
@@ -199,6 +201,7 @@ const eventSend = function (){
 
 //function that operate on the button join
 const eventJoin = function () {
+    clearDiv(contForm);
     generetaForm();
     const btnSend = document.getElementById('send-btn');
 
